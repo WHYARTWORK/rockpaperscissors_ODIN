@@ -1,0 +1,54 @@
+<script>
+    let computerPlay = function () {
+        let randomNum = Math.random() * (4) + 1;
+        randomNum = Math.round(rand)
+        if (randomNum === 1) {
+            return 'Rock';
+        } else if ( randomNum === 2) {
+            return 'Scissors';
+        } else {
+            return 'Paper';
+        }
+    }
+    let playRound = function (playerSelection, computerSelection, cleanup) {
+        let combo = cleanup(playerSelection) + cleanup(computerSelection);
+
+        switch (true) {
+        case (combo === 'rockpaper'):
+            return 'You Lose! Paper beats Rock'
+            break;
+        case (combo === 'rockrock'): 
+            return 'Tie!
+            break;
+        case (combo === 'rockscissors'): 
+            return 'You Win! Rock beats Scissors.'
+            break;
+        case (combo === 'paperscissors'):
+            return 'You Lose! Scissors beat Paper.'
+            break;
+        case (combo === 'paperpaper'):
+            return 'Tie!'
+            break;
+        case (combo === 'paperrock'): 
+            return 'You Win! Paper beats rock'
+            break;
+        case (combo === 'scissorsscissors'):
+            return 'Tie'
+            break;
+        case (combo === 'scissorspaper'):
+            return 'You Win! Scissors beats paper.'
+            break;
+        case (combo === 'scissorsrock'):
+            return 'You Lose! Rock beats Scissors'
+            break;
+        }
+    }
+    let cleanup = function (Selection) {
+        let clean = Selection.trim();
+        return clean.toLowerCase();
+    }
+
+    let game = function () {
+        
+    }
+</script>
